@@ -1,0 +1,25 @@
+services:
+  frigate:
+    #image: "blakeblackshear/frigate:0.9.4-amd64"
+    build: "./docker"
+    image: "frigate:0.9.4-amd64-patched"
+    privileged: true
+    hostname: "frigate"
+    restart: "unless-stopped"
+    shm_size: "128mb"
+    devices:
+      - "/dev/dri/renderD128" # for intel hwaccel
+    volumes:
+      - "/dev/bus/usb:/dev/bus/usb"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/volume1/docker/volumes/frigate-0-config/config.yml:/config/config.yml:ro"
+      - "/volume1/docker/volumes/frigate-0-media:/media/frigate:rw"
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    ports:
+      - "8001:5000" # web interface
+      - "1935:1935" # RTMP feeds
+    env_file:
+      - "./secrets.env"
