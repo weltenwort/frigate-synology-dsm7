@@ -1,8 +1,7 @@
 services:
   frigate:
-    #image: "blakeblackshear/frigate:0.9.4-amd64"
     build: "./docker"
-    image: "frigate:0.9.4-amd64-patched"
+    image: "ghcr.io/weltenwort/frigate-synology-dsm7:v0.9.4-amd64"
     privileged: true
     hostname: "frigate"
     restart: "unless-stopped"
