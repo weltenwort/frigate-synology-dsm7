@@ -1,7 +1,7 @@
 # frigate-synology-dsm7
 This provides a `Dockerfile` (with context) as well as a `docker-compose.yml` file to build a [frigate](https://github.com/blakeblackshear/frigate) docker image that supports using a Google Coral USB TPU. It is based on the official upstream frigate image but recompiles `libusb1` without `udev` support.
 
-## Usage on the NAS
+## Usage on the NAS with `docker-compose`
 
 1. SSH into the NAS.
 
@@ -11,14 +11,7 @@ This provides a `Dockerfile` (with context) as well as a `docker-compose.yml` fi
    git clone https://github.com/weltenwort/frigate-synology-dsm7.git
    ```
 
-3. Build the image:
-
-   ```sh
-   cd frigate-synology-dsm7
-   docker-compose build
-   ```
-
-4. Create environment file `secrets.env` to inject secrets:
+3. Create environment file `secrets.env` to inject secrets:
 
    ```sh
    cat <<EOF >secrets.env
@@ -29,9 +22,9 @@ This provides a `Dockerfile` (with context) as well as a `docker-compose.yml` fi
    EOF
    ```
 
-5. Configure frigate with a config file using the env variables above.
+4. Configure frigate with a config file using the env variables above.
 
-6. Start the container:
+5. Start the container:
 
    ```sh
    docker-compose up --detach --force-create
