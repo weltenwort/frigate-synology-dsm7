@@ -1,6 +1,5 @@
 services:
   frigate:
-    build: "./docker"
     image: "ghcr.io/weltenwort/frigate-synology-dsm7:v0.9.4-amd64"
     privileged: true
     hostname: "frigate"
