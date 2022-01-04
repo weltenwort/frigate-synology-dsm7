@@ -15,8 +15,8 @@ This provides a `Dockerfile` (with context) as well as a `docker-compose.yml` fi
 
    ```sh
    cat <<EOF >secrets.env
-   FRIGATE_TITANIA_MQTT_USERNAME=my-frigate-mqtt-username
-   FRIGATE_TITANIA_MQTT_PASSWORD=my-frigate-mqtt-password
+   FRIGATE_MQTT_USERNAME=my-frigate-mqtt-username
+   FRIGATE_MQTT_PASSWORD=my-frigate-mqtt-password
    FRIGATE_CAMERA_1_RTSP_CREDENTIALS=my-camera-1-username:my-camera-1-password
    FRIGATE_CAMERA_2_RTSP_CREDENTIALS=my-camera-2-username:my-camera-2-password
    EOF

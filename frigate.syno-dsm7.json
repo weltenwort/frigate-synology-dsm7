@@ -1,0 +1,100 @@
+{
+   "CapAdd" : null,
+   "CapDrop" : null,
+   "cmd" : "python3 -u -m frigate",
+   "cpu_priority" : 0,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : false,
+   "enabled" : false,
+   "env_variables" : [
+      {
+         "key" : "PATH",
+         "value" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      },
+      {
+         "key" : "FLASK_ENV",
+         "value" : "development"
+      },
+      {
+         "key" : "DEBIAN_FRONTEND",
+         "value" : "noninteractive"
+      },
+      {
+         "key" : "LIBVA_DRIVER_NAME",
+         "value" : "i965"
+      },
+      {
+         "key" : "FRIGATE_MQTT_USERNAME",
+         "value" : "my-frigate-mqtt-username"
+      },
+      {
+         "key" : "FRIGATE_MQTT_PASSWORD",
+         "value" : "my-frigate-mqtt-password"
+      },
+      {
+         "key" : "FRIGATE_CAMERA_1_RTSP_CREDENTIALS",
+         "value" : "my-camera-1-username:my-camera-1-password"
+      },
+      {
+         "key" : "FRIGATE_CAMERA_2_RTSP_CREDENTIALS",
+         "value" : "my-camera-2-username:my-camera-2-password"
+      }
+   ],
+   "exporting" : false,
+   "id" : "73409f302aa673eaf739a4b4e02dd98f23376150cf54f289f3349c2015dce5af",
+   "image" : "ghcr.io/weltenwort/frigate-synology-dsm7:v0.9.4-amd64",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 0,
+   "name" : "frigate",
+   "network" : [
+      {
+         "driver" : "bridge",
+         "name" : "frigate_default"
+      }
+   ],
+   "network_mode" : "frigate_default",
+   "port_bindings" : [
+      {
+         "container_port" : 1935,
+         "host_port" : 1935,
+         "type" : "tcp"
+      },
+      {
+         "container_port" : 5000,
+         "host_port" : 8001,
+         "type" : "tcp"
+      }
+   ],
+   "privileged" : true,
+   "shortcut" : {
+      "enable_shortcut" : false,
+      "enable_status_page" : false,
+      "enable_web_page" : false,
+      "web_page_url" : ""
+   },
+   "use_host_network" : false,
+   "volume_bindings" : [
+      {
+         "host_absolute_path" : "/dev/bus/usb",
+         "mount_point" : "/dev/bus/usb",
+         "type" : "rw"
+      },
+      {
+         "host_absolute_path" : "/etc/localtime",
+         "mount_point" : "/etc/localtime",
+         "type" : "ro"
+      },
+      {
+         "host_volume_file" : "/docker/volumes/frigate-0-config/config.yml",
+         "mount_point" : "/config/config.yml",
+         "type" : "ro"
+      },
+      {
+         "host_volume_file" : "/docker/volumes/frigate-0-media",
+         "mount_point" : "/media/frigate",
+         "type" : "rw"
+      }
+   ]
+}
