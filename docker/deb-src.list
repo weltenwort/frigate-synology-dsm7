@@ -1,1 +1,1 @@
-deb-src http://archive.ubuntu.com/ubuntu/ focal main restricted
+deb-src http://deb.debian.org/debian bullseye main

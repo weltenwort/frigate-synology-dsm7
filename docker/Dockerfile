@@ -9,11 +9,11 @@ RUN mkdir -p /root/libusb \
   && apt-get source libusb-1.0-0 \
   && apt-get build-dep -y libusb-1.0-0
 ADD debian-rules-disable-udev.patch /root/
-RUN cd /root/libusb/libusb-1.0-1.0.23 \
+RUN cd /root/libusb/libusb-1.0-1.0.24 \
   && patch debian/rules < /root/debian-rules-disable-udev.patch \
   && DEB_BUILD_OPTIONS="nocheck nodocs" dpkg-buildpackage -rfakeroot -b
 
 FROM blakeblackshear/frigate:0.10.0-amd64
 ARG DEBIAN_FRONTEND=noninteractive
-COPY --from=build /root/libusb/libusb-1.0-0_1.0.23-2build1_amd64.deb /root/
-RUN dpkg -i /root/libusb-1.0-0_1.0.23-2build1_amd64.deb
+COPY --from=build /root/libusb/libusb-1.0-0_1.0.24-3_amd64.deb /root/
+RUN dpkg -i /root/libusb-1.0-0_1.0.24-3_amd64.deb
