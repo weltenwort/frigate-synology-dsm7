@@ -36,7 +36,7 @@ This provides a `Dockerfile` (with context) as well as a `docker-compose.yml` fi
 6. Start the container:
 
    ```sh
-   sudo docker-compose up --detach --force-create
+   sudo docker-compose up --detach --force-recreate
    ```
 
 ## Usage on the NAS with `docker-compose` and `git`
@@ -74,5 +74,5 @@ This provides a `Dockerfile` (with context) as well as a `docker-compose.yml` fi
 6. Start the container:
 
    ```sh
-   sudo docker-compose up --detach --force-create
+   sudo docker-compose up --detach --force-recreate
    ```
