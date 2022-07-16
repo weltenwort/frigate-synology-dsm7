@@ -21,3 +21,5 @@ services:
       - "1935:1935" # RTMP feeds
     env_file:
       - "./secrets.env"
+    environment:
+      - LIBVA_DRIVER_NAME_JELLYFIN=i965 # if hwacl isn't working properly with the defaul iHD driver
