@@ -42,7 +42,7 @@
    ],
    "exporting" : false,
    "id" : "73409f302aa673eaf739a4b4e02dd98f23376150cf54f289f3349c2015dce5af",
-   "image" : "ghcr.io/weltenwort/frigate-synology-dsm7:v0.11.0-rc1",
+   "image" : "ghcr.io/weltenwort/frigate-synology-dsm7:v0.11.0-rc2",
    "is_ddsm" : false,
    "is_package" : false,
    "links" : [],
