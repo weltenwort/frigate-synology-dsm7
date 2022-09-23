@@ -1,6 +1,6 @@
 services:
   frigate:
-    image: "ghcr.io/weltenwort/frigate-synology-dsm7:v0.11.0-rc3"
+    image: "ghcr.io/weltenwort/frigate-synology-dsm7:v0.11.0"
     privileged: true
     hostname: "frigate"
     restart: "unless-stopped"
@@ -22,4 +22,4 @@ services:
     env_file:
       - "./secrets.env"
     environment:
-      - LIBVA_DRIVER_NAME=i965 # if hwacl isn't working properly with the defaul iHD driver
+      - LIBVA_DRIVER_NAME=i965 # if hwacl isn't working properly with the default iHD driver
