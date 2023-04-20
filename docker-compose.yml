@@ -1,6 +1,6 @@
 services:
   frigate:
-    image: "ghcr.io/weltenwort/frigate-synology-dsm7:v0.11.1"
+    image: "ghcr.io/weltenwort/frigate-synology-dsm7:v0.12.0"
     privileged: true
     hostname: "frigate"
     restart: "unless-stopped"
